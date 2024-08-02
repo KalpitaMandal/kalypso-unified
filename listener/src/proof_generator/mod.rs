@@ -41,7 +41,7 @@ pub async fn generate_proof(
         fetch_decoded_secret(generate_proof_params.clone())
             .await
             .unwrap();
-
+    log::info!("Inputs: {:?}", String::from_utf8(decoded_secret_input.unwrap()).unwrap());
     if !generate_proof_params
         .markets
         .contains_key(&market_id.to_string())
